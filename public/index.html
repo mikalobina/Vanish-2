@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VANISHMSG 2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>VANISHMSG 2</h1>
+
+  <div id="welcome">
+    <label for="maxMembers">Max Members:</label>
+    <input id="maxMembers" type="number" min="2" max="10" placeholder="Enter max members (2-10)" />
+    <button id="start">Start Room Chat</button>
+
+    <hr />
+
+    <input id="joinCode" placeholder="Enter Room Code to Join" />
+    <button id="join">Join Room</button>
+  </div>
+
+  <div id="chatBox" style="display:none;">
+    <div id="roomCodeDisplay"></div>
+    <div id="chatMessages" class="chat-area"></div>
+    <input id="chatInput" placeholder="Type your message..." />
+    <button id="sendBtn">Send</button>
+    <button id="vanishBtn" style="display:none;">Vanish</button>
+  </div>
+
+  <footer>
+    Developed by <a href="https://www.facebook.com/M.Shuddho" target="_blank">Umayer Rahaman</a>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
