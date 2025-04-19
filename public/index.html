@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VANISHMSG 2</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,15 +14,16 @@
     <input id="maxMembers" type="number" min="2" max="10" placeholder="Enter max members (2-10)" />
     <button id="start">Start Room Chat</button>
 
-    <hr />
+    <hr style="margin: 20px 0;">
 
     <input id="joinCode" placeholder="Enter Room Code to Join" />
     <button id="join">Join Room</button>
   </div>
 
   <div id="chatBox" style="display:none;">
-    <div id="roomCodeDisplay"></div>
+    <div id="roomCodeDisplay" style="margin-bottom: 10px; font-weight: bold;"></div>
     <div id="chatMessages" class="chat-area"></div>
+    
     <input id="chatInput" placeholder="Type your message..." />
     <button id="sendBtn">Send</button>
     <button id="vanishBtn" style="display:none;">Vanish</button>
@@ -35,3 +37,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
