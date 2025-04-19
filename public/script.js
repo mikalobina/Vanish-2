@@ -98,3 +98,11 @@ function scrollChatToBottom() {
   const chat = document.getElementById('chatMessages');
   chat.scrollTop = chat.scrollHeight;
 }
+
+// ✅ Enter key press = send message
+document.getElementById('chatInput').addEventListener('keyup', function(event) {
+  if (event.key === 'Enter') {
+    document.getElementById('sendBtn').click();
+  }
+});
+
