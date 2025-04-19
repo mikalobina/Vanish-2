@@ -21,6 +21,7 @@ document.getElementById('start').onclick = () => {
 document.getElementById('join').onclick = () => {
   const code = document.getElementById('joinCode').value.trim();
   if (!code) return alert("Please enter a room code.");
+
   socket.emit('join-room', { code }, (res) => {
     if (res.error) return alert(res.error);
     myName = res.name;
@@ -41,11 +42,13 @@ document.getElementById('join').onclick = () => {
 };
 
 document.getElementById('sendBtn').onclick = () => {
-  const text = document.getElementById('chatInput').value.trim();
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
   if (!text) return;
+
   socket.emit('send-message', text, replyTo);
   replyTo = null;
-  document.getElementById('chatInput').value = '';
+  input.value = '';
 };
 
 document.getElementById('vanishBtn').onclick = () => {
@@ -100,9 +103,14 @@ function scrollChatToBottom() {
 }
 
 // ✅ Enter key press = send message
-document.getElementById('chatInput').addEventListener('keyup', function(event) {
-  if (event.key === 'Enter') {
-    document.getElementById('sendBtn').click();
+document.getElementById('chatInput').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter' && !event.shiftKey) {
+    event.preventDefault();
+    const text = this.value.trim();
+    if (text) {
+      document.getElementById('sendBtn').click();
+    }
   }
 });
+
 
