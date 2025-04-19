@@ -6,6 +6,10 @@
   --white: #fff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg);
@@ -15,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 h1 {
@@ -33,6 +38,7 @@ h1 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   padding: 20px;
   margin-top: 20px;
+  transition: 0.3s;
 }
 
 input, button {
@@ -42,14 +48,14 @@ input, button {
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+  transition: 0.2s ease;
 }
 
 button {
   background-color: var(--primary);
   color: var(--white);
   border: none;
-  transition: 0.3s;
+  cursor: pointer;
 }
 
 button:hover {
@@ -62,7 +68,7 @@ button:hover {
 }
 
 .chat-area {
-  height: 300px;
+  height: 70vh;
   overflow-y: auto;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -103,8 +109,45 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* 📱 Responsive Mobile Styling */
 @media (max-width: 500px) {
   body {
     padding: 10px;
   }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  #welcome,
+  #chatBox {
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 12px;
+  }
+
+  input, button {
+    padding: 10px;
+    font-size: 15px;
+    margin: 8px 0;
+  }
+
+  .chat-area {
+    height: 60vh;
+    padding: 8px;
+  }
+
+  #chatInput {
+    font-size: 15px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 0 10px;
+  }
 }
+
